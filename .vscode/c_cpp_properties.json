@@ -3,14 +3,12 @@
         {
             "browse": {
                 "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
-                "limitSymbolsToIncludedHeaders": false
+                "limitSymbolsToIncludedHeaders": true
             },
             "includePath": [
                 "/opt/ros/noetic/include/**",
                 "${workspaceFolder}/devel/include/**",
                 "${workspaceFolder}/src/**/include/**",
-                "${workspaceFolder}/src/**/msg/**",
-                "${workspaceFolder}/src/**/srv/**",
                 "/usr/include/**",
                 "/usr/local/include/**"
             ],

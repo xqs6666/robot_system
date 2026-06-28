@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>planning</name>
+  <version>0.0.1</version>
+  <description>规划层：全局路径规划、局部路径规划、行为决策</description>
+  <maintainer email="xqs666@qq.com">xqs666</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>tf</depend>
+  <depend>msgs</depend>
+</package>

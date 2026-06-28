@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>msgs</name>
+  <version>0.0.1</version>
+  <description>自动驾驶系统统一消息定义</description>
+  <maintainer email="xqs666@qq.com">xqs666</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <buildtool_depend>message_generation</buildtool_depend>
+
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+
+  <exec_depend>message_runtime</exec_depend>
+</package>

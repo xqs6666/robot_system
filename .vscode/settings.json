@@ -6,11 +6,6 @@
     "C_Cpp.errorSquiggles": "enabled",
     "C_Cpp.autocompleteAddParentheses": true,
     "cmake.configureOnOpen": false,
-    "files.associations": {
-        "*.msg": "cpp",
-        "*.srv": "cpp",
-        "*.action": "cpp"
-    },
     "python.autoComplete.extraPaths": [
         "/opt/ros/noetic/lib/python3/dist-packages",
         "${workspaceFolder}/devel/lib/python3/dist-packages"
@@ -29,5 +24,9 @@
         "build/**": true,
         "devel/**": true,
         "logs/**": true
+    },
+    "[ros]": {
+        "editor.formatOnSave": false,
+        "editor.semanticHighlighting.enabled": true
     }
 }

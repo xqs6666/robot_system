@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>perception</name>
+  <version>0.0.1</version>
+  <description>感知层：地面分割、点云聚类、障碍物检测、目标跟踪、多传感器融合</description>
+  <maintainer email="xqs666@qq.com">xqs666</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>tf</depend>
+  <depend>msgs</depend>
+</package>
