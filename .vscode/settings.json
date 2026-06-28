@@ -1,9 +1,33 @@
 {
     "ros.distro": "noetic",
+    "ros.autoBuild": false,
+    "C_Cpp.default.configurationProvider": "ms-vscode.cpptools",
+    "C_Cpp.intelliSenseEngine": "default",
+    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.autocompleteAddParentheses": true,
+    "cmake.configureOnOpen": false,
+    "files.associations": {
+        "*.msg": "cpp",
+        "*.srv": "cpp",
+        "*.action": "cpp"
+    },
     "python.autoComplete.extraPaths": [
-        "/opt/ros/noetic/lib/python3/dist-packages"
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "${workspaceFolder}/devel/lib/python3/dist-packages"
     ],
     "python.analysis.extraPaths": [
-        "/opt/ros/noetic/lib/python3/dist-packages"
-    ]
+        "/opt/ros/noetic/lib/python3/dist-packages",
+        "${workspaceFolder}/devel/lib/python3/dist-packages"
+    ],
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "search.exclude": {
+        "build/": true,
+        "devel/": true,
+        "logs/": true
+    },
+    "files.watcherExclude": {
+        "build/**": true,
+        "devel/**": true,
+        "logs/**": true
+    }
 }

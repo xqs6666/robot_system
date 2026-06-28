@@ -1,0 +1,106 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "catkin_make:build",
+            "type": "shell",
+            "command": "cd ${workspaceFolder} && catkin_make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                {
+                    "base": "$gcc",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceFolder}/build"
+                    ]
+                }
+            ],
+            "detail": "构建整个工作区"
+        },
+        {
+            "label": "catkin_make:clean",
+            "type": "shell",
+            "command": "cd ${workspaceFolder} && catkin_make clean",
+            "problemMatcher": [],
+            "detail": "清理构建文件"
+        },
+        {
+            "label": "catkin_make:isolated",
+            "type": "shell",
+            "command": "cd ${workspaceFolder} && catkin_make --cmake-args -DCMAKE_BUILD_TYPE=Release",
+            "group": "build",
+            "problemMatcher": [
+                {
+                    "base": "$gcc",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceFolder}/build"
+                    ]
+                }
+            ],
+            "detail": "Release 模式构建"
+        },
+        {
+            "label": "catkin_make:debug",
+            "type": "shell",
+            "command": "cd ${workspaceFolder} && catkin_make -DCMAKE_BUILD_TYPE=Debug",
+            "group": "build",
+            "problemMatcher": [
+                {
+                    "base": "$gcc",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceFolder}/build"
+                    ]
+                }
+            ],
+            "detail": "Debug 模式构建（含调试符号）"
+        },
+        {
+            "label": "catkin_make:only-pkg",
+            "type": "shell",
+            "command": "cd ${workspaceFolder} && catkin_make --only-pkg-with-deps ${input:pkgName}",
+            "group": "build",
+            "problemMatcher": [
+                {
+                    "base": "$gcc",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceFolder}/build"
+                    ]
+                }
+            ],
+            "detail": "只构建指定包及其依赖"
+        },
+        {
+            "label": "roscore",
+            "type": "shell",
+            "command": "roscore",
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": ".",
+                    "file": 1,
+                    "location": 2,
+                    "message": 3
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".",
+                    "endsPattern": "started core service"
+                }
+            },
+            "detail": "启动 ROS master"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "pkgName",
+            "type": "promptString",
+            "description": "输入要构建的包名"
+        }
+    ]
+}

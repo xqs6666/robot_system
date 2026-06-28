@@ -1,21 +1,27 @@
 {
-  "configurations": [
-    {
-      "browse": {
-        "databaseFilename": "${default}",
-        "limitSymbolsToIncludedHeaders": false
-      },
-      "includePath": [
-        "/opt/ros/noetic/include/**",
-        "/home/xqs666/catkin_ws/src/tf2_static/include/**",
-        "/usr/include/**"
-      ],
-      "name": "ROS",
-      "intelliSenseMode": "gcc-x64",
-      "compilerPath": "/usr/bin/gcc",
-      "cStandard": "gnu11",
-      "cppStandard": "c++14"
-    }
-  ],
-  "version": 4
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/opt/ros/noetic/include/**",
+                "${workspaceFolder}/devel/include/**",
+                "${workspaceFolder}/src/**/include/**",
+                "${workspaceFolder}/src/**/msg/**",
+                "${workspaceFolder}/src/**/srv/**",
+                "/usr/include/**",
+                "/usr/local/include/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64",
+            "configurationProvider": "ms-vscode.cpptools",
+            "name": "ROS-Noetic"
+        }
+    ],
+    "version": 4
 }

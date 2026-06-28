@@ -1,0 +1,95 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ROS: Attach to Node (GDB)",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "${workspaceFolder}/devel/lib/${input:packageName}/${input:nodeName}",
+            "processId": "${command:pickProcess}",
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "/usr/bin/gdb",
+            "cwd": "${workspaceFolder}",
+            "externalConsole": false,
+            "detail": "附加到正在运行的 ROS 节点进程"
+        },
+        {
+            "name": "ROS: Launch Node (Debug)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/devel/lib/${input:packageName}/${input:nodeName}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name": "ROS_MASTER_URI",
+                    "value": "http://localhost:11311"
+                }
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "catkin_make:build",
+            "detail": "启动并调试 ROS 节点（需要先启动 roscore）"
+        },
+        {
+            "name": "ROS: Launch Node (run)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/devel/lib/${input:packageName}/${input:nodeName}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name": "ROS_MASTER_URI",
+                    "value": "http://localhost:11311"
+                }
+            ],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "preLaunchTask": "catkin_make:build",
+            "detail": "以分离窗口运行 ROS 节点（不会进入断点）"
+        },
+        {
+            "name": "ROS: Launch Python Node",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/${input:packageName}/nodes/${input:nodeName}",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "ROS_MASTER_URI": "http://localhost:11311"
+            },
+            "preLaunchTask": "roscore",
+            "detail": "调试 Python ROS 节点"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "packageName",
+            "type": "promptString",
+            "description": "输入包名 (package name)"
+        },
+        {
+            "id": "nodeName",
+            "type": "promptString",
+            "description": "输入节点名 (node executable name)"
+        }
+    ]
+}

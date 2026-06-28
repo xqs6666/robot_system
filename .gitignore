@@ -44,6 +44,9 @@ qtcreator-*
 
 *~
 
+# VS Code
+.vscode/browse.vc.db*
+
 # Emacs
 .#*
 
