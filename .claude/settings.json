@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(catkin_make -DCATKIN_WHITELIST_PACKAGES=\"livox_ros_driver;fast_lio\")",
+      "Bash(nm -C /robot_system/devel/lib/liblivox_ros_driver.so)",
+      "Bash(objdump -t /robot_system/devel/lib/liblivox_ros_driver.so)",
+      "Bash(rm -rf /robot_system/build/drivers/livox_ros_driver /robot_system/devel/lib/liblivox_ros_driver* /robot_system/devel/lib/livox_ros_driver/ /robot_system/devel/share/livox_ros_driver/)"
+    ],
+    "additionalDirectories": [
+      "/robot_system/devel/lib"
+    ]
+  }
+}
