@@ -53,3 +53,12 @@ qtcreator-*
 
 # Catkin custom files
 CATKIN_IGNORE
+
+
+build
+*.png
+*.txt
+*.csv
+*.pdf
+*.pcd
+src/mapping/FAST_LIO/doc/*
