@@ -56,8 +56,6 @@ CATKIN_IGNORE
 
 
 build
-*.png
-*.txt
 *.csv
 *.pdf
 *.pcd
