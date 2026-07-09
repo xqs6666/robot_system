@@ -1,0 +1,39 @@
+version: "3.3"
+
+services:
+  ros-noetic:
+    image: dadp-xqs-ros-noetic:latest
+    container_name: ros_system
+    network_mode: "host"
+    volumes:
+      # 源码目录 (只读挂载，防止容器内误改)
+      - /home/xianqingsong/robot_system:/robot_system
+      # 地图数据
+      - /data/maps:/data/maps
+      # X11 GUI 透传 (用于 RViz 可视化)
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    environment:
+      - DISPLAY=${DISPLAY:-:0}
+      - ROS_MASTER_URI=http://localhost:11311
+      - ROS_HOSTNAME=localhost
+      - QT_X11_NO_MITSHM=1
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - LIBGL_ALWAYS_SOFTWARE=1
+    # 设备映射 (传感器串口)
+    # devices:
+    #   - /dev/ttyUSB0
+    #   - /dev/ttyUSB1
+    stdin_open: true
+    tty: true
+    # 保持容器运行
+    command: tail -f /dev/null
+    restart: unless-stopped
+    # 资源限制
+    deploy:
+      resources:
+        limits:
+          memory: 16G
+        reservations:
+          memory: 4G
+
